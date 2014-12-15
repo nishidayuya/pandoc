@@ -572,13 +572,13 @@ options =
                  (ReqArg
                   (\arg opt -> do
                      marker <- case arg of
-                            "asterisk" -> return '*'
-                            "plus"     -> return '+'
                             "minus"    -> return '-'
+                            "plus"     -> return '+'
+                            "asterisk" -> return '*'
                             _          -> err 6
                                ("Unknown bullet list marker: " ++ arg)
                      return opt { optBulletListMarker = marker })
-                  "asterisk|plus|minus")
+                  "minus|plus|asterisk")
                  "" -- "Marker for bullet list in Markdown"
 
     , Option "" ["atx-headers"]
