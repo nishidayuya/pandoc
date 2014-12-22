@@ -312,6 +312,7 @@ data WriterOptions = WriterOptions
   , writerListings         :: Bool       -- ^ Use listings package for code
   , writerHighlight        :: Bool       -- ^ Highlight source code
   , writerHighlightStyle   :: Style      -- ^ Style to use for highlighting
+  , writerBulletListMarker :: Char       -- ^ Bullet list marker in markdown
   , writerSetextHeaders    :: Bool       -- ^ Use setext headers for levels 1-2 in markdown
   , writerPreferFenced     :: Bool       -- ^ Use fenced code blocks if no attributes in markdown
   , writerTeXLigatures     :: Bool       -- ^ Use tex ligatures quotes, dashes in latex
@@ -356,6 +357,7 @@ instance Default WriterOptions where
                       , writerListings         = False
                       , writerHighlight        = False
                       , writerHighlightStyle   = pygments
+                      , writerBulletListMarker = '-'
                       , writerSetextHeaders    = True
                       , writerPreferFenced     = False
                       , writerTeXLigatures     = True
